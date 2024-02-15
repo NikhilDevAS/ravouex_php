@@ -1,0 +1,560 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0 box-border
+}
+
+body, html {
+  @apply overflow-x-hidden box-border
+}
+
+header {
+  @apply w-full top-0 fixed z-[100]
+}
+
+.navbar {
+  @apply flex items-center justify-between relative bg-transparent transition-all duration-[400ms] font-bold text-sm px-2 py-2 md:px-10 uppercase
+}
+
+.navbar-logo {
+  @apply w-28 md:w-32
+}
+
+.navbar-logo img {
+  @apply w-28 md:w-32
+}
+
+.navbar ul {
+  @apply list-none lg:flex navbar-links hidden
+}
+
+.custom-navbar {
+  @apply bg-[#0f4658] py-5 text-[#e7eef0]
+}
+
+.navbar-links li a {
+  @apply block py-[5px] px-[20px] transition-all duration-[400ms]
+}
+
+
+.navbar-links li.navbar-dropdown {
+  @apply relative
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+  @apply visible opacity-100 translate-y-0 top-10
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+  @apply invisible opacity-0 absolute py-[20px] px-0 top-[100%] translate-y-[50px] left-0 min-w-[250px] bg-white rounded-b-lg shadow-md transition-all duration-[400ms] z-[100] normal-case
+}
+
+.navbar-links li.navbar-dropdown .dropdown a {
+  @apply py-[10px] font-normal block text-black
+}
+
+.navbar-dropdown .dropdown a:hover {
+  @apply pl-[25px]
+}
+
+.navbar-links li a:hover {
+  @apply text-[#D39D45]
+}
+
+.mobList {
+  @apply py-2 border-b border-white uppercase
+}
+
+.dropdown_mob_opt {
+  @apply py-2 normal-case transition-all duration-500
+}
+
+.dropdown_mob_opt:hover {
+  @apply ml-2
+}
+
+
+.main-carousel, .main-carousel .item {
+  @apply relative w-full min-h-screen flex items-center
+}
+
+.main-carousel .item img {
+  @apply w-full h-full object-cover absolute top-0 left-0
+}
+
+.main-carousel .carousel-content {
+  @apply bg-transparent h-[300px] px-5 lg:w-[40%] lg:ml-[150px] relative z-30
+}
+
+.main-carousel .carousel-content h2 {
+  @apply text-3xl md:text-7xl font-bold mb-5
+}
+
+.main-carousel .carousel-content p {
+  @apply text-sm md:text-lg mb-5
+}
+
+.main-carousel .carousel-content button {
+  @apply py-2 px-5 text-sm md:text-lg border-0 outline-0 bg-blue-500 text-white rounded-md
+}
+
+
+
+/* Foundation  */
+
+.foundation-container {
+  @apply relative flex justify-center items-center py-12 px-5 lg:px-[100px] bg-[#e7eef0] min-h-[100vh]
+}
+
+.foundation {
+  @apply relative flex items-center justify-center flex-col
+}
+
+.foundation .container {
+  @apply relative w-full lg:flex justify-center items-center
+}
+
+.foundation .img-container {
+  @apply relative w-full lg:h-[500px]
+}
+
+.foundation .img-container img {
+  @apply z-[20] top-0 left-0 w-full lg:h-full rounded-xl
+}
+
+.foundation .text-container {
+  @apply z-[21] backdrop-blur-lg md:p-[40px] w-full mt-5 lg:mt-0 lg:max-w-[500px] border rounded-xl lg:translate-x-[-80px] lg:translate-y-[100px]
+}
+
+.foundation .text-container h3 {
+  @apply text-[1.5em] mb-[10px] uppercase font-semibold underline text-[#0b3442]
+}
+
+
+/************************** main title and subtext ********************* */
+
+.main-title {
+  @apply text-xl md:text-5xl font-bold
+}
+
+.sub-text {
+  @apply mt-2 mb-10 italic text-[10px] md:text-sm
+}
+
+
+/************************ Vision, Mission, Motto ********************** */
+
+.vision-container {
+  @apply relative flex flex-col py-28 px-5 md:px-[100px] lg:px-[200px] bg-[#a0bcc5] bg-opacity-50
+}
+
+.card {
+  @apply md:h-[400px] h-[300px] bg-white relative flex items-end shadow-md duration-500 ease-in rounded-lg;
+}
+
+.card:hover {
+  @apply shadow-md;
+}
+
+.card::before {
+  @apply content-[''] absolute top-0 left-0 block w-full h-full bg-gradient-to-t from-[#13586f] to-[#FFFFFF] z-20 transition-all duration-500 opacity-0 rounded-lg;
+}
+
+.card:hover::before {
+  @apply opacity-75;
+}
+
+.card img {
+  @apply w-full h-full object-cover absolute top-0 left-0 rounded-lg shadow-md;
+}
+
+.card .info {
+  @apply relative z-30 text-white opacity-0 translate-y-[30px] transition-all duration-500 p-10 flex flex-col items-center justify-end;
+}
+
+.card:hover .info {
+  @apply opacity-100 translate-y-0;
+}
+
+.card .info h3 {
+  @apply text-2xl font-bold mb-2;
+}
+
+.card .info p {
+  @apply text-center;
+}
+
+
+/************* Specialities ****************** */
+
+.speciality {
+  @apply relative flex flex-col py-[80px] px-5 md:px-[100px] lg:px-[200px] bg-[#2a687d]
+}
+
+.counters {
+  @apply py-[3em] px-[2em] text-white text-center w-full
+}
+
+.counters>div {
+  @apply my-0 mx-auto grid lg:grid-cols-4 md:gap-y-[4em] gap-x-[2em] md:grid-cols-2 grid-cols-1 gap-y-[5em]
+}
+
+.counter {
+  @apply relative flex flex-col items-center
+}
+
+.counter h2 {
+  @apply text-[2em] md:text-[3em] mb-[0.5em]
+}
+
+.counter:not(:last-child)::before {
+  @apply content-[''] bg-white absolute md:w-[2px] md:h-[3em] md:top-[50%] translate-y-[-50%] md:right-[-1em] w-[90%] h-[2px] top-auto right-0 bottom-[-3em] md:bottom-0 md:translate-x-0 translate-x-[-50%ss]
+}
+
+.counter:nth-child(2)::before {
+  @apply md:hidden lg:block
+}
+
+
+/***************** New Announcement Styles  ********************/
+.newAnnouncement {
+  @apply relative flex flex-col justify-center items-center px-5 pt-[80px] bg-[#e7eef0]
+}
+
+.announcement-container {
+  @apply min-h-[50vh] w-full mt-5 shadow-md relative
+}
+
+.announcement-container img {
+  @apply w-full h-full object-cover absolute
+}
+
+/* Awards and Certificates */
+
+.awardsandcertificates {
+  @apply relative flex flex-col py-[80px] px-5 md:px-[100px] lg:px-[200px] bg-[#cfdde2]
+}
+
+.owl-awards img {
+  @apply w-[300px] h-full object-cover
+}
+
+/**************** Footer ******************* */
+
+footer {
+  @apply py-[80px] px-5 md:px-[100px] lg:px-[200px]
+}
+
+.footer-container {
+  @apply w-full flex flex-col lg:flex-row justify-between
+}
+
+.footer-container ul {
+  @apply mb-2
+}
+
+.footer-item-header {
+  @apply py-2 border-b-2 border-black
+}
+
+.footer-item-header h5 {
+  @apply text-2xl
+}
+
+.social-media-icon-bg {
+  @apply bg-[#42798b] rounded-full w-[40px] h-[40px] flex items-center justify-center p-2 cursor-pointer
+}
+
+footer hr {
+  @apply w-full border-2 my-10
+}
+
+footer .copyright {
+  @apply text-center text-sm
+}
+
+footer .fa-location-dot, footer .fa-envelope {
+  @apply text-[#42798b] text-[20px]
+}
+
+footer .social-media-footer-container {
+  @apply flex items-center mt-5 gap-5
+}
+
+footer .footer-address {
+  @apply flex items-center mt-5 gap-5
+}
+
+footer .short-links {
+  @apply mt-5 text-sm cursor-pointer pl-5
+}
+
+footer .emergency-title {
+  @apply py-2 border-black
+}
+
+footer .phone_number {
+  @apply text-xl font-bold
+}
+
+footer .emergency-subtext {
+  @apply text-sm my-5
+}
+
+
+
+/********************** Page Banner ******************* */
+
+.banner-image {
+  @apply relative flex flex-col justify-center items-center py-28 px-5 md:px-[100px] lg:px-[200px] bg-cover
+}
+
+
+/* Message From Chairman  */
+
+.chairman-msg-container {
+  @apply relative flex flex-col justify-center py-5 px-5 md:px-[100px] lg:px-[200px] bg-[#e7eef0] pb-[100px]
+}
+
+.chairman-msg-container .msg-container {
+  @apply grid grid-cols-1 md:grid-cols-2 rounded-lg text-white
+}
+
+.chairman-msg-container .msg-container img {
+  @apply md:rounded-s-lg shadow-lg w-full h-full object-cover
+}
+
+.chairman-msg-container .msg-container .msg-text-container {
+  @apply p-10 bg-[#2a687d] md:rounded-e-lg
+}
+
+.chairman-msg-container .msg-container .msg-text-container h2 {
+  @apply text-3xl font-bold mb-5
+}
+
+.chairman-msg-container .msg-container .msg-text-container p {
+  @apply text-sm
+}
+
+/* Job Portal  */
+
+.job-title-container {
+  @apply px-5 md:px-[100px] lg:px-[200px] py-10
+}
+
+.job-title-container h2 {
+  @apply text-4xl font-bold
+}
+
+.job-title-container p {
+  @apply text-sm italic
+}
+
+.jobs-container {
+  @apply relative flex justify-center py-5 px-5 md:px-[100px] lg:px-[200px] bg-[#e7eef0]
+}
+
+.jobs-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5
+}
+
+.job-box {
+  @apply bg-white p-5 rounded-xl shadow-md flex flex-col items-center justify-between
+}
+
+.jobs-grid .job-box h2 {
+  @apply uppercase font-bold text-center
+}
+
+.job-description {
+  @apply mt-2 text-[13px] leading-4
+}
+
+.post-details {
+  @apply flex items-center justify-between mt-2 text-[10px] leading-3
+}
+
+.vacancy-info {
+  @apply flex items-center justify-center flex-col
+}
+
+.job-btn-container {
+  @apply w-full flex justify-center items-center
+}
+
+.job-btn-container .job-btn {
+  @apply mt-5 w-full bg-black text-white text-center rounded-md px-5 py-2 bottom-0 hover:bg-[#42798b] transition-all duration-300 text-sm
+}
+
+/* Job Details Page  */
+
+.job-title-container {
+  @apply py-28 px-5 md:px-[100px] lg:px-[200px] bg-[#719aa8]
+}
+
+.job-title-box-container {
+  @apply flex flex-col md:flex-row md:items-center gap-5 md:gap-0 md:justify-between
+}
+
+.job-title-info-box {
+  @apply flex flex-col md:flex-row gap-5 md:items-center justify-start
+}
+
+.job-title-info-box img {
+  @apply w-[100px] h-[100px] md:w-[150px] md:h-[150px] object-cover rounded-lg
+}
+
+.job-title-info-box h1 {
+  @apply text-3xl lg:text-4xl font-bold
+}
+
+.firm-location-box {
+  @apply mt-5 flex gap-2 text-sm
+}
+
+.job-type-container {
+  @apply flex gap-5 mt-5
+}
+
+.job-type-btn {
+  @apply bg-green-200 w-24 flex justify-center items-center text-[12px] rounded-full shadow-sm
+}
+
+.apply-btn {
+  @apply px-5 py-2 bg-[#0f4658] text-white
+}
+
+.job-info-container {
+  @apply px-5 md:px-[100px] lg:px-[200px] py-10 flex flex-col md:flex-row gap-10 justify-between
+}
+
+.job-info-container .info-box {
+  @apply mb-5
+}
+
+.job-info-container .info-box h2 {
+  @apply text-xl font-semibold
+}
+
+.job-info-container .info-box ul {
+  @apply list-disc ml-5 mt-5
+}
+
+.job-info-container .info-box ul li {
+  @apply my-2
+}
+
+.job-overview-container {
+  @apply w-[350px]
+}
+
+.job-overview-container .job-overview-box {
+  @apply bg-[#cfdde2] min-h-[30vh] rounded-md p-5
+}
+
+.job-overview-container .job-overview-box h2 {
+  @apply text-lg font-semibold
+}
+
+.job-overview-container .job-overview-box .overview-item {
+  @apply mt-5 flex gap-5 text-sm
+}
+
+.item-title {
+  @apply font-bold
+}
+
+.item-value {
+  @apply text-[12px]
+}
+
+/* Modal Box Container  */
+
+
+.modal-container {
+  @apply fixed min-w-full inset-0 bg-black bg-opacity-50 
+  backdrop:blur-sm flex items-center justify-center duration-300 text-white z-[100] overflow-y-auto 
+  right-0 left-0 top-0 bottom-0
+}
+
+.modal-form-box {
+  @apply bg-[#0f4658] p-5 rounded-md shadow-md overflow-y-auto
+}
+
+.modal-title-container {
+  @apply flex w-full items-center justify-between mb-4
+}
+
+.modal-title-container h3{
+  @apply font-bold
+}
+
+.modal-title-container #close-modal {
+  @apply cursor-pointer
+}
+
+.modal-container form {
+  @apply text-sm text-gray-400
+}
+
+.single-line-div {
+  @apply flex flex-col mb-5 text-sm
+}
+
+.grid-line-div {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-2 my-5
+}
+
+.form-btn-container {
+  @apply flex justify-center items-center
+}
+
+.form-btn-container button {
+  @apply bg-black py-2 w-full rounded-lg
+}
+
+label {
+  @apply text-sm
+}
+input, textarea, select {
+  @apply border border-gray-500 outline-none rounded-md shadow-sm px-2 py-1 text-sm bg-transparent w-full
+}
+
+
+/**************************** Social Media ********************** */
+
+.media-icons {
+  @apply z-[1] fixed top-[50%] right-0 w-[210px] flex flex-col
+}
+
+.media-icons a {
+  @apply transform translate-x-40 translate-y-0 text-left p-[10px] text-[22px] transition-all duration-700 flex justify-between items-center text-white
+}
+
+.media-icons a:hover {
+  @apply text-white transform translate-x-0 translate-y-0
+}
+
+.Facebook  {
+  @apply bg-[#2C80D3] text-white
+}
+  
+.Instagram  {
+  @apply bg-[#fa0910] text-white
+}
+  
+.Twitter  {
+  @apply bg-black
+}
+  
+  
+.LinkedIn  {
+  @apply bg-[#0A66C2]
+}
+
+
+.media-icons a i {
+  @apply text-[30px]
+}
