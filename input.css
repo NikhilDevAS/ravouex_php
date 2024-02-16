@@ -458,10 +458,13 @@ footer .emergency-subtext {
   @apply text-lg font-semibold
 }
 
-.job-overview-container .job-overview-box .overview-item {
-  @apply mt-5 flex gap-5 text-sm
+.job-overview-container .job-overview-box .overview-items {
+  @apply mt-5 flex gap-5 text-sm items-center
 }
 
+.job-overview-container .job-overview-box .overview-items i {
+  @apply text-xl
+}
 .item-title {
   @apply font-bold
 }
@@ -558,3 +561,4 @@ input, textarea, select {
 .media-icons a i {
   @apply text-[30px]
 }
+

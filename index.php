@@ -1,3 +1,7 @@
+ <?php require_once('includes/config.php');?>
+
+ 
+ 
  <?php
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 

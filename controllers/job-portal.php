@@ -1,3 +1,20 @@
+
+<?php 
+  require_once('includes/config.php');
+    require_once('includes/functions.php');
+ 
+
+  $sql = "SELECT * FROM jobposts;";
+  $result = mysqli_query($conn, $sql);
+  $posts = array(); // Initialize an empty array to store posts
+
+  if (mysqli_num_rows($result) > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+          $posts[] = $row; // Append each row to the $posts array
+      }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,36 +38,35 @@
         <h2>Latest Job listing:</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, eos accusantium
             possimus esse quis maxime</p>
+
     </div>
 
     <div class="jobs-container">
         <div class="jobs-grid">
-
+        <?php foreach ($posts as $post){?>
             <!-------------------------- Job Card  ---------------->
             <div class="job-box">
                 <div>
-                    <h2 class="job-title">dfgdfgdfgdfg</h2>
-                    <p class="job-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, molestias accusamus iure aspernatur impedit deleniti aliquid quaerat minima dolorem velit modi maiores possimus voluptatem qui eveniet sapiente veritatis officia sunt!
-                    </p>
+                    <h2 class="job-title"><?php echo $post["title"]?></h2>
+                    <p class="job-description"><?php echo $post["description"] ?></p>
                 </div>
                 <div style="width: 100%;">
                     <div class="post-details">
                         <div>
                             <p>Posted Date</p>
-                            <span>{dateFormat(post.date)}</span>
+                            <span><?php echo dateFormat($post["date"])?></span>
                         </div>
                         <div class="vacancy-info">
                             <p>Vacancies</p>
-                            <span>{post.vacancy}</span>
+                            <span><?php echo dateFormat($post["vacancy"]); ?></span>
                         </div>
                         <div>
                             <p>Due Date</p>
-                            <p>{dateFormat(post.due_date)}</p>
+                            <p><?php echo dateFormat ($post["due_date"])?></p>
                         </div>
                     </div>
                     <div class="job-btn-container">
-                        <a href="/job-details?nikhil-dev-a-s"
+                        <a href="/job-details?<?php echo $post["slug"]; ?>"
                             class="job-btn">More
                             Details
                         </a>
@@ -58,6 +74,7 @@
                 </div>
             </div>
             <!-------------------------- End Job Card  ---------------->
+            <?php }; ?>
         </div>
     </div>
 

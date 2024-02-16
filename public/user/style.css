@@ -1901,12 +1901,18 @@ footer .emergency-subtext {
   font-weight: 600;
 }
 
-.job-overview-container .job-overview-box .overview-item {
+.job-overview-container .job-overview-box .overview-items {
   margin-top: 1.25rem;
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.job-overview-container .job-overview-box .overview-items i {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .item-title {
@@ -2104,3 +2110,4 @@ input, textarea, select {
 .media-icons a i {
   font-size: 30px;
 }
+

@@ -1,12 +1,13 @@
+
 <div class="modal-container" id="modal">
     <div class="modal-form-box">
         <div class="modal-title-container">
-            <h3>{props.title}</h3>
+            <h3>Apply For this Job</h3>
             <div id="close-modal">
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </div>
-        <form action="#" method="POST" id="job-apply-form">
+        <form method="post" id="job-apply-form">
             <div class="single-line-div">
                 <label>Title</label>
                 <select name="title">
@@ -67,7 +68,7 @@
                 <textarea placeholder="Type here..." name="message" required></textarea>
             </div>
             <div class="form-btn-container">
-                <button type="submit" id="apply-btn">Apply</button>
+                <button type="submit" name="apply-btn" id="apply-btn">Apply</button>
             </div>
         </form>
     </div>

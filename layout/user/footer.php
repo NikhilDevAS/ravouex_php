@@ -1,4 +1,4 @@
-<script src="https://kit.fontawesome.com/eb8fffcb35.js" crossorigin="anonymous"></script>
+
  <!----------------------------- Social Media ------------------------>
  <div class='z-[100] invisible md:visible'>
         <div class="media-icons">
